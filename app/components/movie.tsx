@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
+//ประกาศชนิดของตัวแปรของ properties
 type Props = {
   key: string;
   id: string;
@@ -8,7 +9,7 @@ type Props = {
   poster_path: string;
   release_date: string;
 };
-
+//ฟังกชัน การดึงข้อมูลโปสเตอร์จาก API server
 export default function Movie({ title, id, poster_path, release_date }: Props) {
   const imagePath = "https://image.tmdb.org/t/p/original";
   return (
