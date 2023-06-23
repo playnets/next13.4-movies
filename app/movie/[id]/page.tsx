@@ -7,10 +7,11 @@ type Props = {
 }
 
 export default async function MovieDetail({params}: Props) {
+  const key = process.env.NEXT_PUBLIC_API_KEY;
   const { id } = params;
   const imagePath = "https://image.tmdb.org/t/p/original";
   const data = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=095fc92a9340dcb67bdd53448e1eda21`, 
+    `https://api.themoviedb.org/3/movie/${id}?api_key=${key}`, 
     {next: {revalidate:10}} //เคลียร์ cache ทุก 10 วินาที
   );
     const res = await data.json();
